@@ -42,8 +42,8 @@ app.get('/tix', (req, res)=> {
     location: '.info h2',
     date: '.info h3',
     linkInfo: '.more a@href', 
-    linkBuy: '.more a:nth-child(2)@href',
-    image: 'div.image@src'
+    linkBuy: '.more li:nth-child(2) a@href',
+    image: '.image@data-image'
   }]).stream();
   stream.pipe(res);
 })
