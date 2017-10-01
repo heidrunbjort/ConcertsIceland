@@ -1,5 +1,6 @@
 const app = require('express')();
 const xRay = require('x-ray');
+const fetch = require('node-fetch');
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -23,16 +24,12 @@ const x = xRay({
 
 app.get('/midi', (req, res)=> {
   res.header("Content-Type", "application/json; charset=utf-8");
-  // http://apis.is/concerts
-
- /* const stream = x('http://www.mbl.is/frettir/', '.teaser', [{
-    titill: 'h1 a',
-    link: 'h1 a@href',
-    mynd: 'img@src',
-    shortText: '.texti | trim',
-    fullText: x('h1 a@href', '.main-layout | trim')
-  }]).stream();
-  stream.pipe(res);*/
+  fetch('http://apis.is/concerts', {method: 'GET'})
+    .then(res => {
+        return res.json();
+    }).then(json => {
+        res.send(json);
+    });
 })
 
 app.get('/tix', (req, res)=> {
@@ -48,6 +45,6 @@ app.get('/tix', (req, res)=> {
   stream.pipe(res);
 })
 
-var serverPort = 3001
+var serverPort = 3002
 console.log('server started on port ' + serverPort)
 app.listen(serverPort);
