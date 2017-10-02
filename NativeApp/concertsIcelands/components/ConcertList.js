@@ -1,8 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { actions as ConcertActions } from '../reducers/concerts';
 import Concert from './Concert';
 
-export default class ConcertList extends React.Component {
+class ConcertList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,24 +24,7 @@ export default class ConcertList extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://192.168.1.73:3002/tix')
-      .then((response) => response.json())
-      .then((responseJson) => {
-        this.setState({
-          isLoading: false,
-          concerts: responseJson
-        });        
-        /*let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-        this.setState({
-          isLoading: false,
-          dataSource: ds.cloneWithRows(responseJson),
-        }, function() {
-          // do something with new state
-        });*/
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    this.props.actions.getConcerts();
   }
 
   _keyExtractor = (item, index) => index;
@@ -53,7 +39,7 @@ export default class ConcertList extends React.Component {
     return (
       <FlatList
         style={styles.container}
-        data={this.state.concerts}
+        data={this.props.concerts.concerts}
         keyExtractor={this._keyExtractor}
         renderItem={this._renderConcert}
       />
@@ -67,3 +53,21 @@ const styles = StyleSheet.create({
     marginRight: 15,
   },
 });
+
+function mapStateToProps(state) {
+  return {
+    concerts: state.concerts
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(ConcertActions, dispatch)
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ConcertList);
+

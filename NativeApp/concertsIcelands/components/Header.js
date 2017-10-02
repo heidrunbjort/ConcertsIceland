@@ -5,7 +5,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-      <Text>Concerts</Text>
+      <Text style={{fontSize: 18, marginLeft: 15, fontWeight: 'bold', color:'white'}}>Concerts Iceland</Text>
       </View>
     );
   }
@@ -13,11 +13,10 @@ export default class Header extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'lightgrey',
-    marginTop: 30,
+    backgroundColor: '#4863A0',
     marginBottom: 15,
     //alignItems: 'flex-start',
-    height: 30,
+    height: 40,
     justifyContent: 'center',
   },
 });

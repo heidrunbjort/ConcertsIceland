@@ -8,9 +8,9 @@ export default class Concert extends Component {
   render() {
     const {concert} = this.props;
       return (
-        <View>
+        <View style={{marginBottom:30}}>
           <Image source={{uri: concert.image}} style={{flex: 1, alignSelf: 'stretch', width: imageWidth, height: imageHeight}}/>
-          <Text>{concert.titill}</Text>
+          <Text style={{fontWeight: 'bold', fontSize: 16, marginTop: 5}}>{concert.titill}</Text>
           <Text>{concert.location}</Text>
           <Text>{concert.date}</Text>
         </View>
