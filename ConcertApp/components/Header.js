@@ -14,7 +14,6 @@ const styles = {
   container: {
     backgroundColor: '#4863A0',
     marginBottom: 15,
-    //alignItems: 'flex-start',
     height: 40,
     justifyContent: 'center',
   },

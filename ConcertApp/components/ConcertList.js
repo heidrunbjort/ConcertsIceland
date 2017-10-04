@@ -23,21 +23,6 @@ class ConcertList extends Component {
   }
 }
 
-  //_keyExtractor = (item, index) => index;
-
-  /*_renderConcert = ({item}) => (
-    <Concert
-      concert={item}
-    />
-  )*/
-
-      /*<FlatList
-        style={styles.container}
-        data={this.props.concerts.concerts}
-        keyExtractor={this._keyExtractor}
-        renderItem={this._renderConcert}
-      />*/
-
 const styles = {
   container: {
     marginLeft: 15,
