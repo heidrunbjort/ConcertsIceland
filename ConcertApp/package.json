@@ -8,12 +8,16 @@
   },
   "license": "MIT",
   "dependencies": {
+    "file-loader": "^1.1.5",
+    "material-ui": "^1.0.0-beta.13",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "typeface-roboto": "0.0.35",
+    "url-loader": "^0.6.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

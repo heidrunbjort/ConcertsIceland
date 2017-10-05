@@ -13,9 +13,14 @@ module.exports = {
 				loaders: [/*'react-hot-loader',*/ 'babel-loader']
 			},
 			{
-				test: /\.scss$/,
+				test: /\.s?css$/,
 				loader: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
+			},
+			{ 
+				test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
+				loader: 'url-loader?limit=100000' 
 			}
+
 		]
 	}
 }
