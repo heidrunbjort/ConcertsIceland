@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Header extends Component {
   render() {
     return (
-      <div style={styles.container}>
+      <div className="header-text" style={styles.container}>
         <span style={styles.text}>Concerts Iceland</span>
       </div>
     );

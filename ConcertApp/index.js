@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import concerts from './reducers';
 import './reset.scss';
+import './main.scss';
 
 const store = createStore(concerts, applyMiddleware(thunk));
 

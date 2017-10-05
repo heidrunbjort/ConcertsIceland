@@ -44,7 +44,7 @@ const getConcerts = () => {
   return dispatch => {
     dispatch(requestConcerts());
 
-    fetch('http://192.168.1.73:3002/tix')
+    fetch('https://tixscraper.herokuapp.com/tix')
       .then((response)=>response.json())
       .then((response)=> {
         dispatch(receiveConcerts(response));
