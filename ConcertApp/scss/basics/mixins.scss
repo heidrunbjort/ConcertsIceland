@@ -1,0 +1,30 @@
+@mixin mainText($size: 50px, $color: black) {
+	font-family: 'Roboto', sans-serif;
+	font-size: $size;
+	color: $color;
+  }
+  
+  @mixin subText {
+	font-family: 'Libre Barcode 39 Text', cursive;
+	font-size: 80px;
+	color: blue;
+  }
+  
+  @mixin scalablePic($url, $padding) {
+	background: url($url) center center no-repeat;
+	background-size: contain;
+	background-color: yellow;
+	height: 0;
+	width: 100%;
+	padding-top: $padding;
+  }
+
+  @mixin margin {
+  	margin-right: 10px;
+  }
+
+  @mixin concertTitle($margintop){
+  	font-weight: bold;
+	font-size: $title-text-size;
+	margin-top: $margintop;
+}

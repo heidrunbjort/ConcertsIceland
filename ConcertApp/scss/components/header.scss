@@ -1,0 +1,15 @@
+.header {
+    background-color: $blue;
+    margin-bottom: 15px;
+    height: 55px;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: $h1-size;
+    margin-left: 20px; 
+    font-weight: bold; 
+    color: $white;
+    padding-top: 14px;
+    text-transform: uppercase;
+  }

@@ -23,13 +23,6 @@ class ConcertList extends Component {
   }
 }
 
-const styles = {
-  container: {
-    marginLeft: 15,
-    marginRight: 15,
-  },
-};
-
 function mapStateToProps(state) {
   return {
     concerts: state.concerts

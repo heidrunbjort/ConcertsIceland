@@ -6,7 +6,7 @@ import { createStore, applyMiddleware } from 'redux';
 import concerts from './reducers';
 import './reset.scss';
 import 'typeface-roboto'
-import './main.scss';
+import './scss/styles.scss';
 import App from './app';
 
 const store = createStore(concerts, applyMiddleware(thunk));

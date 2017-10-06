@@ -1,0 +1,29 @@
+// nesting
+.concert {
+	margin-bottom:30px;
+	img {
+		flex: 1; 
+		align-self: 'stretch'; 
+		width: $img-with;
+	}
+	.buttons {
+		margin-top: 10px;
+		a {
+			text-decoration: none;
+		}
+		a:first-child{
+			button {
+				//nýting á mixin
+				@include margin;
+			}
+		} 
+	}
+	.titill {
+		@include concertTitle(5px);
+	}
+
+	.location {
+		font-size: 18px;
+	}
+}
+
